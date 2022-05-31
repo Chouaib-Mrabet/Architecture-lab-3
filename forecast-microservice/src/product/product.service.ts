@@ -8,6 +8,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 const { faker } = require('@faker-js/faker');
 @Injectable()
 export class ProductService {
+  
   constructor(@InjectModel('product') private readonly productModel: Model<Product>){}
   async create(createProductDto: CreateProductDto): Promise<Product> {
     const newProduct = new this.productModel(createProductDto);
